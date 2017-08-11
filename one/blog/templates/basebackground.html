@@ -1,0 +1,33 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>DID</title>
+    <link href="{% static '/css/bootstrap-combined.min.css' %}" rel="stylesheet">
+    <link href="{% static '/css/bootstrap-responsive.css' %}" rel="stylesheet">
+    <link href="{% static '/css/layoutit.css' %}" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'css/buttons.css' %}" media="screen" title="no title" charset="utf-8">
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}" media="screen" title="no title" charset="utf-8">
+
+    <script src="{% static '/js/jquery-3.2.1.min.js' %}" charset="utf-8"></script>
+    <script src="{% static 'js/addblog.js' %}" charset="utf-8"></script>
+    <script src="{% static '/js/ajaxneed.js' %}" charset="utf-8"></script>
+
+    <script src="{% static '/js/kindeditor-4.1.10/kindeditor-all-min.js' %}" charset="utf-8"></script>
+    <script src="{% static '/js/kindeditor-4.1.10/lang/zh_CN.js' %}" charset="utf-8"></script>
+    <script src="{% static '/js/kindeditor-4.1.10/config.js' %}" charset="utf-8"></script>
+
+  </head>
+  <body style="background-color: #FDF5E6;">
+      <center>
+      <h1 style="font-size: 50px">Flying</h1><a href="{% url 'blogmain' %}"></a>
+      </center>
+
+      {% block content %}
+      <div>
+
+      </div>
+      {% endblock %}
+  </body>
+</html>

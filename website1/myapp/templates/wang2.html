@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+{%load static%}
+<script type="text/javascript">
+
+
+</script>
+
+{% block boby %}
+<h1 align = 'center'>个人信息界面</h1>
+<img src="{%static 'img/3.jpg' %}" alt="你的电脑坏了吧..." width="150px" height="150px" id="user_img" align = 'left'>
+<div id="user_base_info">
+  <input type="text" name="name" value="name" id="name">
+  <p></p>
+  <input type="text" name="password" value="password" id="pwd">
+  <p></p>
+  <input type="text" name="sign" value="签名...">
+</div>
+<p></p>
+<p></p>
+
+<textarea name="name" rows="10" cols="80"></textarea>
+{% endblock %}

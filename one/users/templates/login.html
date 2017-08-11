@@ -1,0 +1,70 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html>
+<link rel="stylesheet" href="{% static 'css/login.css' %}">
+<link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}" media="screen" title="no title" charset="utf-8">
+<link rel="stylesheet" href="{% static 'css/buttons.css' %}" media="screen" title="no title" charset="utf-8">
+  <head>
+    <meta charset="utf-8">
+    <title>DID 登陆</title>
+    <script type="text/javascript">
+      function isNull(){
+        var login = document.getElementById('username');
+        var name = document.getElementById('username').value;
+        var pwd = document.getElementById('password').value;
+        if (name != '' || pwd != '') {
+          return True;
+        }else{
+          alert('输入不能为空!')
+          return false;
+        }
+
+      };
+    </script>
+  </head>
+  <body >
+
+
+  <form class="center-in-center" onsubmit="return isNull() "method="post" name="login">
+
+    <fieldset>
+      <div id="legend" class="">
+        <legend class=""></legend>
+      </div>
+    <div class="control-group" >
+
+          <!-- Text input-->
+          <label class="control-label" for="input01"></label>
+          <div class="controls">
+            <input type="text" placeholder="username" class="input-xlarge" name="username" id="username">
+            <p class="help-block">please write username</p>
+          </div>
+        </div>
+
+    <div class="control-group">
+
+          <!-- Text input-->
+          <label class="control-label" for="input01"></label>
+          <div class="controls">
+            <input type="text" placeholder="password" class="input-xlarge" name="password" id="password">
+            <p class="help-block">please write password</p>
+          </div>
+        </div>
+    </fieldset>
+    {%csrf_token%}
+    {% if error %}
+    {% if error == '查无此人...' %}
+    <a href="{% url 'register' %}">查无此人...</a>
+    {% else %}
+    <p>
+      {{error}}
+    </p>
+    {% endif %}
+    {% endif %}
+    <center>
+    <p><button type="submit" name="button" class="button button-action button-pill" >{{LOGIN}} </button></p>
+    </<center>
+  </form>
+
+  </body>
+</html>

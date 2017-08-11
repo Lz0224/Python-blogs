@@ -1,0 +1,23 @@
+{%load staticfiles%}
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>this is include</title>
+  </head>
+  <body>
+
+
+    <center><img src="{%static '7.gif'%}" alt="">
+      <hr>
+    <a href="{%url 'aaaa'%}">真是的</a>
+
+    <p>{{NAME}}</p>
+    <hr>
+    <p>{{TEL}}</p>
+    <hr>
+    <p>{{GEYAN}}</p>
+    {%include 'lol.html'%}
+  </body>
+</html>

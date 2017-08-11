@@ -1,0 +1,23 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html>
+  <head>
+    <script type="text/javascript" src="{% static 'js/kindeditor-4.1.10/lang/zh_CN.js' %}"></script>
+    <script type="text/javascript" src="{% static 'js/kindeditor-4.1.10/kindeditor-min.js' %}"></script>
+    <script type="text/javascript" src="{% static 'js/kindeditor-4.1.10/config.js' %}"></script>
+    <meta charset="utf-8">
+    <title>文章添加</title>
+  </head>
+  <body>
+    <form class="" action="{% url 'essay' %}" method="post">
+      <p>在这里了啊！！！</p>
+      <p>用户：  {{ form.user }}</p>
+      <p>标题：  {{ form.title }}</p>
+      <p>描述：  {{ form.desc }}</p>
+      <p>内容：  {{ form.content | safe }}</p>
+      <p>标签：  {{ form.tag }}</p>
+      <p>分类：  {{ form.category }}</p>
+      <input name="submit" type="submit" id="submit" tabindex="5" value="提交" class="button" />
+    </form>
+  </body>
+</html>

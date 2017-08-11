@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title> filter</title>
+  </head>
+  <body>
+
+    num:{{num | add:'2' | add:'100'}}
+    str:{{s | lower}}<br>
+
+
+    #过滤器
+    {%load poll_estras%}
+    str:{{s | rep:' ' | lower}}
+    <br>
+    {%load cuowutishi%}
+    str:{{num | asd}}
+    <br>
+    {%if error%}
+    <p>这是一个错误</p>
+    {%else%}
+    <p>真的是错的</p>
+    {%endif%}
+
+  </body>
+</html>

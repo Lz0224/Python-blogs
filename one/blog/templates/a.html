@@ -1,0 +1,20 @@
+{% for blog in allblog %}
+<li class="span4" >
+  <div class="thumbnail">
+      <img src="{{blog.image}}"/>
+    <div class="caption">
+      <h3 id="title">
+    {{blog.title}}
+  </h3>
+      <!-- <p>
+  {{blog.content}}
+      </p> -->
+      <p>
+        <!-- href="{% url 'oneblog' %}"  -->
+        <a class="btn btn-primary" id="{{blog.title}}" onclick="getList(this)">浏览</a>
+        <a class="btn" href="#" id="share">分享</a>
+      </p>
+    </div>
+  </div>
+</li>
+{% endfor %}

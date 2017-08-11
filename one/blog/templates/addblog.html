@@ -1,0 +1,24 @@
+{% extends "basebackground.html" %}
+{% load staticfiles %}
+
+{% block content %}
+  <div >
+    <form class="" action="" method="post" onsubmit="return isImg()" enctype="multipart/form-data">
+      {% csrf_token %}
+      <p><input type="text" id="title" placeholder="title" style="width: 700px;" name="title"></p>
+      <p><textarea id="content" rows="10" cols="40" style="width: 900px; heigth: 500px;" name="content"></textarea></p>
+      <select class="input-xlarge" name="type">
+         <option>Python</option>
+         <option>Java</option>
+         <option>Android</option>
+         <option>Js</option>
+         <option>C</option>
+         <option>HTML</option>
+     </select>
+     <p><input type="file" id="imageapth" name="img"></p>
+      <center>
+      <button type="submit" name="button" class="button button-action button-pill">确定</button>
+      </center>
+    </form>
+  </div>
+{% endblock %}

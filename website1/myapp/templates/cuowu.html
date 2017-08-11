@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script type="text/javascript">
+    function ok(){
+      alert("进行错误测试")
+    };
+    function click2(){
+      alert("alert 弹出框测试")
+
+    };
+    function click1(){
+      alert("返回测试，，，")
+    }
+    </script>
+    <meta charset="utf-8">
+    <title>啦啦啦</title>
+
+  </head>
+  <body>
+
+  <style type="text/css">
+  body {font-family:sans-serif;}
+  p.outset
+  {
+    border-style: outset
+
+  }
+  p.inset {border-style: inset}
+  p.outset
+  {
+    border-style: solid;
+    border-right-width: 800px 820px;
+
+  }
+
+  </style>
+
+  <p class="inset"><center>
+    <h1><p class="outset" width:30px 50px>{%load cuowutishi%}{{s | asd}}</p></h1>
+      {%if s == 0%}
+      <button type="button" name="button" onclick="click1()">请注册</button>
+      {%elif s == 3%}
+      <button type="button" name="button" onclick="click2()">重新注册</button>
+      {%else%}
+      <button type="button" name="button" onclick="ok()">返回</button>
+      {%endif%}
+  </p>
+
+
+  </body>
+</html>

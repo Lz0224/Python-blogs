@@ -1,0 +1,26 @@
+{% extends "basebackground.html" %}
+{% load staticfiles %}
+
+{% block content %}
+<div >
+    <h1 align="right" style="color:blue; font-family:宋体;">{{name}}-的个人主页</h1>
+
+
+    {% if bloglist %}
+    {% for blog in bloglist %}
+    <div>
+      <center>
+      <a href="#" onclick="startOne(this)" id="{{blog.title}}">{{blog.title}}</a>
+      <hr>
+      </center>
+      <!-- {{blog.content}} -->
+    </div>
+    {% endfor %}
+    {% endif %}
+    </div>
+    <p>
+      <center>
+      <a href="{% url 'blogadd' %}">{{ADDBLOG}}</a>
+        </center>
+    </p>
+{% endblock %}

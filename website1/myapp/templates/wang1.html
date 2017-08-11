@@ -1,0 +1,41 @@
+{%load static%}
+<!DOCTYPE html>
+<html>
+  <head>
+    <script type="text/javascript">
+      function login(){
+        var name = document.getElementById('username').value;
+        var pwd = document.getElementById('password').value;
+        if (name != "" && pwd != "") {
+            window.location.href='http://192.168.0.202:8000/one/alluser/name:' + name + "," + "pwd:" + pwd;
+        }else{
+            alert("输入不能为空")
+        }
+      };
+
+      function register(){
+            alert("該功能未開放...")
+      };
+
+    </script>
+    <meta charset="utf-8">
+    <title>sing in </title>
+  </head>
+  <body>
+    <!-- {% include "include/d.html"%} -->
+      <!-- <img src="{%static '2.jpg' %}" alt=""> -->
+    <!-- {{NAME}}
+    {{TEL}} -->
+    <h1 style="..." align="center" >用户输入</h1>
+    <div style="width:100%;text-align:center">
+    <form action="/login/" method="post" align="center">
+    <input type="text" name="username" id="username">
+     <p></p>
+    <input type="password" name="password" id="password">
+    <p></p>
+    <button type="button" name="button" onclick="login()">确定</button>
+    <button type="button" name="button" onclick="register()">注册</button>
+    </div>
+  </form>
+  </body>
+</html>

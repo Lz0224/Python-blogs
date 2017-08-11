@@ -1,0 +1,50 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html>
+<head>
+		<meta charset="utf-8">
+		<link href="{% static 'css/reglogin.css' %}" rel='stylesheet' type='text/css' />
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+	<div class="main">
+		<div class="header" >
+			<h1>  欢 迎 来 注 册  ！  ！   ！</h1>
+		</div>
+		<p></p>
+			<form action="{%url 'reg'%}" method="post">
+                {% csrf_token %}
+				<ul class="left-form">
+								{%for i in errors%}
+								<h5>{{errors}}</h5>
+								{%endfor%}
+					<h2>新用户:</h2>
+					<li>
+						<!-- <p>账号：<input type="number" name="num" value="{{name}}" max="1367113000" min="1367112000"></p> -->
+						<p>账号：<input type="number" name="num" value="{{name}}"></p>
+
+						<div class="clear"> </div>
+					</li>
+					<li>
+						<p>姓名：<input type="text" name="name" value="{{name}}"></p>
+
+						<div class="clear"> </div>
+					</li>
+					<li>
+						<p>密码：<input type="password" name="password" value="{{password}}"></p>
+						<div class="clear"> </div>
+					</li>
+					<li>
+						<p>邮件： <input type="email" name="email" value="{{email}}"></p>
+						<div class="clear"> </div>
+					</li>
+					<!--用于记录注册跳转来源，方便注册之后跳转之前的页面-->
+                    <input type="hidden" name="source_url" value="{{ request.META.HTTP_REFERER }}">
+					<input type="submit" value="Create And Login">
+					<div class="clear"> </div>
+				</ul>
+				<div class="clear"> </div>
+			</form>
+	</div>
+</body>
+</html>

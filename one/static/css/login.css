@@ -1,0 +1,29 @@
+*{
+margin: 0;
+padding: 0;
+background-color: #FDF5E6;
+}
+
+.center-in-center{
+position: absolute;
+top: 50%;
+left: 50%;
+-webkit-transform: translate(-50%, -50%);
+-moz-transform: translate(-50%, -50%);
+-ms-transform: translate(-50%, -50%);
+-o-transform: translate(-50%, -50%);
+transform: translate(-50%, -50%);
+}
+.name{
+  height: 30px;
+  width: 100%;
+  background-color:#FDF5E6;
+}
+
+p{
+line-height: 50px;
+}
+
+body{
+  background-color: #FDF5E6;
+}

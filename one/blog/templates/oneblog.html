@@ -1,0 +1,57 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html>
+<link href="{% static 'css/bootstrap.min.css' %}" rel="stylesheet">
+<link href="{% static '/css/bootstrap-combined.min.css' %}" rel="stylesheet">
+<link href="{% static '/css/bootstrap-responsive.css' %}" rel="stylesheet">
+<link href="{% static '/css/layoutit.css' %}" rel="stylesheet">
+<link rel="stylesheet" href="{% static 'css/buttons.css' %}" media="screen" title="no title" charset="utf-8">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <script src="{% static '/js/jquery-3.2.1.min.js' %}" charset="utf-8"></script>
+
+    <script type="text/javascript">//思路是错的...
+
+    </script>
+  </head>
+  <body>
+    <div class="container">
+	<div class="row">
+		<div class="span12">
+			<h3 class="text-center">
+			{{oneblog.title}}
+			</h3>
+		</div>
+	</div>
+	<div class="row">
+		<div class="span8">
+			<p class="lead">
+				<em></em><strong>
+          </strong>
+      {{oneblog.content | safe }}
+			</p>
+		</div>
+		<div class="span4">
+			<img alt="140x140" src="{{oneblog.image}}" class="img-circle" id="img"/>
+      <p><button type="submit" name="button" class="button button-action button-pill" >评论 </button></p>
+		</div>
+	</div>
+</div>
+
+<!-- <div class="container-fluid">
+	<div class="row-fluid">
+		<div class="span12">
+			<h3 class="text-left">
+				h3. 这是一套可视化布局系统.
+			</h3>
+			<p>
+				<em>Git</em>是一个分布式的版本控制系统，最初由<strong>Linus Torvalds</strong>编写，用作Linux内核代码的管理。在推出后，Git在其它项目中也取得了很大成功，尤其是在Ruby社区中。
+			</p>
+		</div>
+	</div>
+</div> -->
+
+
+  </body>
+</html>

@@ -1,0 +1,273 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html>
+    <link href="{% static 'css/bootstrap.min.css' %}" rel="stylesheet">
+    <link href="{% static '/css/bootstrap-combined.min.css' %}" rel="stylesheet">
+    <link href="{% static '/css/bootstrap-responsive.css' %}" rel="stylesheet">
+    <link href="{% static '/css/layoutit.css' %}" rel="stylesheet">
+    <meta charset="utf-8">
+    <title></title>
+    <script src="{% static '/js/jquery-3.2.1.min.js' %}" charset="utf-8"></script>
+    <script src="{% static '/js/ajaxneed.js' %}" charset="utf-8"></script>
+    <script src="{% static '/js/blogmain.js' %}" charset="utf-8"></script>
+    <script src="{% static '/js/bootstrap.js' %}" charset="utf-8"></script>
+    <script src="{% static '/js/bootstrap.min.js' %}" charset="utf-8"></script>
+    <script src="{% static '/js/npm.js' %}" charset="utf-8"></script>
+    <script src="{% static '/js/pace.min.js' %}" charset="utf-8"></script>
+<script type="text/javascript">
+
+function createXmlHttpRequest(){
+  var xmlHttp;
+try{    //Firefox, Opera 8.0+, Safari
+  xmlHttp=new XMLHttpRequest();
+}catch (e){
+try{    //Internet Explorer
+  xmlHttp=new ActiveXObject("Msxml2.XMLHTTP");
+}catch (e){
+try{
+  xmlHttp=new ActiveXObject("Microsoft.XMLHTTP");
+}catch (e){}
+}
+}
+  return xmlHttp;
+}
+
+$(document).ready(function(){
+  $('#app').click(function(){
+    $('#headtest').slideToggle('slow');
+  });
+
+  $('#user').click(function(){
+      $('#userlist').slideToggle('slow');
+    });
+
+    $('#t1').click(function(){
+      typepost($('#t1').text());
+
+    });
+
+    $('#t2').click(function(){
+      typepost($('#t2').text());
+    });
+
+    $('#t3').click(function(){
+      typepost($('#t3').text());
+    });
+
+    $('#t4').click(function(){
+      typepost($('#t4').text());
+    });
+
+    $('#t5').click(function(){
+      typepost($('#t5').text());
+    });
+
+    $('#t6').click(function(){
+      typepost($('#t6').text());
+    });
+   });
+
+
+function typepost(mType){
+  var xmlHttp = createXmlHttpRequest();
+  xmlHttp.onreadystatechange = function(){
+    if (xmlHttp.readyState == 4) {
+      if (xmlHttp.status == 200) {
+        var test = xmlHttp.responseText;
+        document.getElementById('oneType').innerHTML = test
+      }
+    }
+  }
+  xmlHttp.open('post', 'http://192.168.0.202:8000/blog/blogmain/', true);
+  xmlHttp.setRequestHeader("Content-Type","application/x-www-form-urlencoded");
+  xmlHttp.send("type=" + mType);
+}
+
+</script>
+  </head>
+
+  <body>
+    <div>
+    <center>
+    <div class="container">
+    	<div class="row">
+
+        <h4 id="headtest" style="display: none;">This is my frist webapp! </h4>
+
+    		<div class="span12">
+          <img id="app" src="{% static '/imgs/app.png' %}" alt="..." />
+    		</div>
+    	</div>
+      </<center>
+    	<div class="row">
+    		<div class="span12">
+    			<ul class="breadcrumb">
+    				<li>
+    					<h2>
+                <a href="#" style="padding: 50px" id="t1">Python</a>
+                <a href="#" style="padding: 50px" id="t2">Java</a>
+                <a href="#" style="padding: 50px" id="t3">JS</a>
+                <a href="#" style="padding: 50px" id="t4">HTML</a>
+                <a href="#" style="padding: 50px" id="t5">C</a>
+                <a href="#" style="padding: 50px" id="t6">Android</a>
+    					</h2>
+    				</li>
+    			</ul>
+    		</div>
+    	</div>
+    	<div class="row">
+    		<div class="span8">
+    			<div class="carousel slide" id="carousel-219608">
+    				<ol class="carousel-indicators">
+    					<li class="active" data-slide-to="0" data-target="#carousel-219608">
+    					</li>
+    					<li data-slide-to="1" data-target="#carousel-219608">
+    					</li>
+    					<li data-slide-to="2" data-target="#carousel-219608">
+    					</li>
+    				</ol>
+    				<div class="carousel-inner">
+    					<div class="item active">
+    					<img src="{% static 'imgs/backgound.jpg' %}"/>
+    						<div class="carousel-caption">
+    							<h4>
+    								进击的巨人
+    							</h4>
+    							<p>
+    								我们是猎手，它们才是猎物！
+    							</p>
+    						</div>
+    					</div>
+    					<div class="item">
+    							<img src="{% static 'imgs/new1.jpg' %}"/>
+    						<div class="carousel-caption">
+    							<h4>
+    								言叶之庭
+    							</h4>
+    							<p>
+                    隐约雷鸣 阴霾天空 但盼风雨来 能留你在此 隐约雷鸣 阴霾天空 即使天无雨 我亦留此地
+    							</p>
+    						</div>
+    					</div>
+    					<div class="item">
+    						<img src="{% static 'imgs/new2.jpg' %}"/>
+    						<div class="carousel-caption">
+    							<h4>
+    								秒速五厘米
+    							</h4>
+    							<p>
+    								就算发了一千条短信，心与心的距离也不会靠近1厘米。
+    							</p>
+    						</div>
+    					</div>
+    				</div> <a data-slide="prev" href="#carousel-219608" class="left carousel-control">‹</a> <a data-slide="next" href="#carousel-219608" class="right carousel-control">›</a>
+    			</div>
+    			<ul class="thumbnails" id="oneType">
+            {% block blogone %}
+    				<li class="span4">
+    					<div class="thumbnail">
+    							<img src="{% static 'imgs/backgound.jpg' %}"/>
+    						<div class="caption">
+    							<h3>
+    								无文章
+    							</h3>
+
+    							<p>
+    							...
+    							</p>
+
+    							<p>
+
+    								<a class="btn btn-primary" href="#" >浏览</a> <a class="btn" href="#">分享</a>
+    							</p>
+    						</div>
+    					</div>
+    				</li>
+            {% endblock %}
+    			</ul>
+
+          <div id="pagination">
+              {% block page %}
+            <ul id="pagination-flickr">
+
+            </ul>
+            {% endblock %}
+          </div>
+    	</div>
+        {% block user %}
+        <a id="user">请登陆</a>
+        {% endblock %}
+        <ul  style="display: none;" id="userlist">
+          <li><a href="{% url 'blogpeople' %}">进入个人主页</a></li>
+          <li><a href="#">注销</a></li>
+        </ul>
+    		<div class="span4">
+    			<table class="table">
+    				<thead>
+    					<tr>
+    						<th>
+                  标题
+    						</th>
+    						<th>
+                  发表时间
+    						</th>
+    						<th>
+    							浏览量
+    						</th>
+    					</tr>
+    				</thead>
+
+    				<tbody>
+              {% block rank %}
+    					<tr>
+    						<td>
+    							1
+    						</td>
+    			         Default
+    						<td>
+    							01/04/2012
+    						</td>
+    						<td>
+    							Default
+    						</td>
+    					</tr>
+              {% endblock %}
+    				</tbody>
+    			</table>
+          {% block news %}
+    			<dl>
+    				<dt>
+    					Rolex
+    				</dt>
+    				<dd>
+    					劳力士创始人为汉斯.威尔斯多夫，1908年他在瑞士将劳力士注册为商标。
+    				</dd>
+    				<dt>
+    					Vacheron Constantin
+    				</dt>
+    				<dd>
+    					始创于1775年的江诗丹顿已有250年历史，
+    				</dd>
+    				<dd>
+    					是世界上历史最悠久、延续时间最长的名表之一。
+    				</dd>
+    				<dt>
+    					IWC
+    				</dt>
+    				<dd>
+    					创立于1868年的万国表有“机械表专家”之称。
+    				</dd>
+    				<dt>
+    					Cartier
+    				</dt>
+    				<dd>
+    					卡地亚拥有150多年历史，是法国珠宝金银首饰的制造名家。
+    				</dd>
+    			</dl>
+            {% endblock %}
+    		</div>
+    	</div>
+    </div>
+        </div>
+  </body>
+</html>
